@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Solutions</title>
+
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+	<body>
+		<div id="main">
+			<div class="unit" id="bigO">
+					<h1 class="title">Big O Notation</h1>
+					
+					<div class="lab">
+						<h3 class="lab-title">Bubble Sort</h3>
+						
+						<br>
+						<h3 class="lab-title">Enhanced Bubble Sort</h3>
+					
+				</div>
+			</div>
+		
+			<div class="unit">
+				<h1 class="title" id="exceptions">Exceptions</h1>
+				<div class="lab">
+					<h3 class="lab-title">Keep Trying</h3> 
+					<div class="code"><pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">import</span> java.io.IOException;
+<span style="color: #000080; font-weight: bold">import</span> java.util.Scanner;
+
+<span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">class</span> Tester {
+  
+  <span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">static</span> <span style="color: #000080; font-weight: bold">void</span> main(String[] args) {
+    <span style="color: #000080; font-weight: bold">boolean</span> shouldLoopAgain = <span style="color: #000080; font-weight: bold">true</span>;
+
+    <span style="color: #000080; font-weight: bold">while</span>(shouldLoopAgain) {
+      <span style="color: #000080; font-weight: bold">try</span> {
+        Scanner sf = <span style="color: #000080; font-weight: bold">new</span> Scanner(System.<span style="color: #FF0000">in</span>);
+        String str = sf.<span style="color: #FF0000">nextLine</span>();
+
+        <span style="color: #000080; font-weight: bold">if</span>(str.<span style="color: #FF0000">toLowerCase</span>().<span style="color: #FF0000">equals</span>(<span style="color: #0000FF">&quot;exit&quot;</span>)) {
+          System.<span style="color: #FF0000">out</span>.<span style="color: #FF0000">println</span>(<span style="color: #0000FF">&quot;It did not work&quot;</span>);
+          <span style="color: #000080; font-weight: bold">break</span>;
+        }
+
+        FileInput test = <span style="color: #000080; font-weight: bold">new</span> FileInput();
+        test.<span style="color: #FF0000">readTheFile</span>(str);
+        shouldLoopAgain = <span style="color: #000080; font-weight: bold">false</span>;
+        System.<span style="color: #FF0000">out</span>.<span style="color: #FF0000">println</span>(<span style="color: #0000FF">&quot;It worked!&quot;</span>);
+      }
+      <span style="color: #000080; font-weight: bold">catch</span> {
+        System.<span style="color: #FF0000">out</span>.<span style="color: #FF0000">println</span>(e.<span style="color: #FF0000">getMessage</span>());
+        System.<span style="color: #FF0000">out</span>.<span style="color: #FF0000">prinln</span>(<span style="color: #0000FF">&quot;Please try again with a valid file name&quot;</span>);
+      }
+    }
+  }
+}
+</pre></div>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="header">
+			<span id="header-txt">Solutions</span>
+		</div>
+
+		<div id="nav">
+			<a href="https://mohiganscs.github.io">Home</a>
+			<a href="https://mohiganscs.github.io/BPJ_textbook.pdf/">BPJ Textbook</a>
+			<a href="https://mohiganscs.github.io/labs/">Labs</a>
+			<a href="https://mohiganscs.github.io/solutions/">Solutions</a>
+			<a href="https://mohiganscs.github.io/about/">About</a>
+		</div>
+
+		<div class="sidebar" onclick="toggleSidebar()">
+			<div class="toggle-btn">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<ul>
+				<li onclick="toUnit(bigO)">Big O Notation</li>
+				<li onclick="toUnit(exceptions)">Exceptions</li>
+				<li>Input/Output</li>
+				<li>Sets and Maps</li>
+				<li>Linked Lists</li>
+				<li>Stacks and Queues</li>
+				<li>Trees</li>
+				<li>HashTable</li>
+				<li>Heaps and Priority Queues</li>
+				<li>Adjacency Lists and Adjacency Matrices</li>
+				<li>Game Project</li>
+				<li>Big Data Overview and Data Visualization</li>
+				<li>Relational Databases and Basic SQL</li>
+				<li>Advanced SQL</li>
+				<li>Machine Learning</li>
+				<li>Final Project</li>
+			</ul>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
