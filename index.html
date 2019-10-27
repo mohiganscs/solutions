@@ -14,9 +14,138 @@
 					<div class="lab">
 						<h3 class="lab-title">Bubble Sort</h3>
 						
+						<div class="code"><pre style="margin: 0; line-height: 125%"><span style="color: #60a0b0; font-style: italic">/*********</span>
+
+<span style="color: #60a0b0; font-style: italic">Main Class</span>
+
+<span style="color: #60a0b0; font-style: italic">**********/</span>
+
+<span style="color: #007020; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.util.Arrays</span><span style="color: #666666">;</span>
+
+<span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">class</span> <span style="color: #0e84b5; font-weight: bold">Main</span> <span style="color: #666666">{</span>
+
+  <span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">static</span> <span style="color: #902000">void</span> <span style="color: #06287e">main</span><span style="color: #666666">(</span>String<span style="color: #666666">[]</span> args<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+    <span style="color: #902000">int</span><span style="color: #666666">[]</span> arr <span style="color: #666666">=</span> <span style="color: #666666">{</span><span style="color: #40a070">65</span><span style="color: #666666">,</span> <span style="color: #40a070">3</span><span style="color: #666666">,</span> <span style="color: #40a070">9</span><span style="color: #666666">,</span> <span style="color: #40a070">1</span><span style="color: #666666">,</span> <span style="color: #40a070">2</span><span style="color: #666666">,</span> <span style="color: #40a070">7</span><span style="color: #666666">,</span> <span style="color: #40a070">2</span><span style="color: #666666">,</span> <span style="color: #40a070">8</span><span style="color: #666666">,</span> <span style="color: #40a070">2</span><span style="color: #666666">,</span> <span style="color: #40a070">5</span><span style="color: #666666">);</span>
+
+    BubbleSort b <span style="color: #666666">=</span> <span style="color: #007020; font-weight: bold">new</span> BubbleSort<span style="color: #666666">(</span>arr<span style="color: #666666">));</span>
+    
+    System<span style="color: #666666">.</span><span style="color: #4070a0">out</span><span style="color: #666666">.</span><span style="color: #4070a0">pringln</span><span style="color: #666666">(</span>b<span style="color: #666666">.</span><span style="color: #4070a0">toString</span><span style="color: #666666">());</span>
+
+    b<span style="color: #666666">.</span><span style="color: #4070a0">sort</span><span style="color: #666666">();</span>
+
+    System<span style="color: #666666">.</span><span style="color: #4070a0">out</span><span style="color: #666666">.</span><span style="color: #4070a0">println</span><span style="color: #666666">(</span>b<span style="color: #666666">.</span><span style="color: #4070a0">toString</span><span style="color: #666666">());</span>
+  <span style="color: #666666">}</span>
+
+<span style="color: #666666">}</span>
+</pre></div>
+
+						<br>
+
+						<div class="code"><pre style="margin: 0; line-height: 125%"><span style="color: #60a0b0; font-style: italic">/*****************</span>
+
+<span style="color: #60a0b0; font-style: italic">BubbleSort Class</span>
+
+<span style="color: #60a0b0; font-style: italic">*****************/</span>
+
+<span style="color: #007020; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.util.Arrays</span><span style="color: #666666">;</span> <span style="color: #60a0b0; font-style: italic">// for Arrays.toString()</span>
+
+<span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">class</span> <span style="color: #0e84b5; font-weight: bold">BubbleSort</span> <span style="color: #666666">{</span>
+
+  <span style="color: #007020; font-weight: bold">private</span> <span style="color: #902000">int</span><span style="color: #666666">[]</span> arr<span style="color: #666666">;</span>
+  
+  BubbleSort<span style="color: #666666">(</span><span style="color: #902000">int</span><span style="color: #666666">[]</span> arr<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+    <span style="color: #007020; font-weight: bold">this</span><span style="color: #666666">.</span><span style="color: #4070a0">arr</span> <span style="color: #666666">=</span> arr<span style="color: #666666">;</span>
+  <span style="color: #666666">}</span>
+
+  <span style="color: #007020; font-weight: bold">public</span> <span style="color: #902000">void</span> <span style="color: #06287e">sort</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+    <span style="color: #007020; font-weight: bold">for</span><span style="color: #666666">(</span><span style="color: #902000">int</span> i <span style="color: #666666">=</span> <span style="color: #40a070">0</span><span style="color: #666666">;</span> i <span style="color: #666666">&lt;</span> arr<span style="color: #666666">.</span><span style="color: #4070a0">length</span><span style="color: #666666">;</span> i<span style="color: #666666">++)</span> <span style="color: #666666">{</span> <span style="color: #60a0b0; font-style: italic">// loop through n amount of times</span>
+      <span style="color: #007020; font-weight: bold">for</span><span style="color: #666666">(</span><span style="color: #902000">int</span> j <span style="color: #666666">=</span> <span style="color: #40a070">0</span><span style="color: #666666">;</span> j <span style="color: #666666">&lt;</span> arr<span style="color: #666666">.</span><span style="color: #4070a0">length</span><span style="color: #666666">;</span> j<span style="color: #666666">++)</span> <span style="color: #666666">{</span> <span style="color: #60a0b0; font-style: italic">// loop through another n amount of times</span>
+        <span style="color: #902000">int</span> temp<span style="color: #666666">;</span> <span style="color: #60a0b0; font-style: italic">// for when you change arr[j]</span>
+        <span style="color: #007020; font-weight: bold">if</span><span style="color: #666666">(</span>arr<span style="color: #666666">[</span>j<span style="color: #666666">]</span> <span style="color: #666666">&gt;</span> arr<span style="color: #666666">[</span>j<span style="color: #666666">+</span><span style="color: #40a070">1</span><span style="color: #666666">]</span> <span style="color: #666666">{</span>
+          temp <span style="color: #666666">=</span> arr<span style="color: #666666">[</span>j<span style="color: #666666">];</span>
+          arr<span style="color: #666666">[</span>j<span style="color: #666666">]</span> <span style="color: #666666">=</span> arr<span style="color: #666666">[</span>j<span style="color: #666666">+</span><span style="color: #40a070">1</span><span style="color: #666666">];</span>
+          arr<span style="color: #666666">[</span>j<span style="color: #666666">+</span><span style="color: #40a070">1</span><span style="color: #666666">]</span> <span style="color: #666666">=</span> temp<span style="color: #666666">;</span>
+        <span style="color: #666666">}</span>
+      <span style="color: #666666">}</span>
+    <span style="color: #666666">}</span>
+  <span style="color: #666666">}</span>
+
+  <span style="color: #007020; font-weight: bold">public</span> String <span style="color: #06287e">toString</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+    <span style="color: #007020; font-weight: bold">return</span> <span style="color: #4070a0">&quot;\n&quot;</span> <span style="color: #666666">+</span> Arrays<span style="color: #666666">.</span><span style="color: #4070a0">toString</span><span style="color: #666666">(</span>arr<span style="color: #666666">);</span>
+  <span style="color: #666666">}</span>
+
+<span style="color: #666666">}</span>
+</pre></div>
+
+
+
 						<br>
 						<h3 class="lab-title">Enhanced Bubble Sort</h3>
-					
+						
+						<div class="code"><pre style="margin: 0; line-height: 125%"><span style="color: #60a0b0; font-style: italic">/*********</span>
+
+<span style="color: #60a0b0; font-style: italic">Main Class</span>
+
+<span style="color: #60a0b0; font-style: italic">**********/</span>
+
+<span style="color: #007020; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.util.Arrays</span><span style="color: #666666">;</span>
+
+<span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">class</span> <span style="color: #0e84b5; font-weight: bold">Main</span> <span style="color: #666666">{</span>
+
+  <span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">static</span> <span style="color: #902000">void</span> <span style="color: #06287e">main</span><span style="color: #666666">(</span>String<span style="color: #666666">[]</span> args<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+    <span style="color: #902000">int</span><span style="color: #666666">[]</span> arr <span style="color: #666666">=</span> <span style="color: #666666">{</span><span style="color: #40a070">65</span><span style="color: #666666">,</span> <span style="color: #40a070">3</span><span style="color: #666666">,</span> <span style="color: #40a070">9</span><span style="color: #666666">,</span> <span style="color: #40a070">1</span><span style="color: #666666">,</span> <span style="color: #40a070">2</span><span style="color: #666666">,</span> <span style="color: #40a070">7</span><span style="color: #666666">,</span> <span style="color: #40a070">2</span><span style="color: #666666">,</span> <span style="color: #40a070">8</span><span style="color: #666666">,</span> <span style="color: #40a070">2</span><span style="color: #666666">,</span> <span style="color: #40a070">5</span><span style="color: #666666">);</span>
+
+    BubbleSort b <span style="color: #666666">=</span> <span style="color: #007020; font-weight: bold">new</span> BubbleSort<span style="color: #666666">(</span>arr<span style="color: #666666">));</span>
+    
+    System<span style="color: #666666">.</span><span style="color: #4070a0">out</span><span style="color: #666666">.</span><span style="color: #4070a0">pringln</span><span style="color: #666666">(</span>b<span style="color: #666666">.</span><span style="color: #4070a0">toString</span><span style="color: #666666">());</span>
+
+    b<span style="color: #666666">.</span><span style="color: #4070a0">sort</span><span style="color: #666666">();</span>
+
+    System<span style="color: #666666">.</span><span style="color: #4070a0">out</span><span style="color: #666666">.</span><span style="color: #4070a0">println</span><span style="color: #666666">(</span>b<span style="color: #666666">.</span><span style="color: #4070a0">toString</span><span style="color: #666666">());</span>
+  <span style="color: #666666">}</span>
+
+<span style="color: #666666">}</span>
+</pre></div>
+				
+				<br>
+
+				<div class="code"><pre style="margin: 0; line-height: 125%"><span style="color: #60a0b0; font-style: italic">/*****************</span>
+
+<span style="color: #60a0b0; font-style: italic">BubbleSort Class</span>
+
+<span style="color: #60a0b0; font-style: italic">*****************/</span>
+
+<span style="color: #007020; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.util.Arrays</span><span style="color: #666666">;</span> <span style="color: #60a0b0; font-style: italic">// for Arrays.toString()</span>
+
+<span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">class</span> <span style="color: #0e84b5; font-weight: bold">BubbleSort</span> <span style="color: #666666">{</span>
+
+  <span style="color: #007020; font-weight: bold">private</span> <span style="color: #902000">int</span><span style="color: #666666">[]</span> arr<span style="color: #666666">;</span>
+  
+  BubbleSort<span style="color: #666666">(</span><span style="color: #902000">int</span><span style="color: #666666">[]</span> arr<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+    <span style="color: #007020; font-weight: bold">this</span><span style="color: #666666">.</span><span style="color: #4070a0">arr</span> <span style="color: #666666">=</span> arr<span style="color: #666666">;</span>
+  <span style="color: #666666">}</span>
+
+  <span style="color: #007020; font-weight: bold">public</span> <span style="color: #902000">void</span> <span style="color: #06287e">sort</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+    <span style="color: #007020; font-weight: bold">for</span><span style="color: #666666">(</span><span style="color: #902000">int</span> i <span style="color: #666666">=</span> <span style="color: #40a070">1</span><span style="color: #666666">;</span> i <span style="color: #666666">&lt;</span> arr<span style="color: #666666">.</span><span style="color: #4070a0">length</span><span style="color: #666666">/</span><span style="color: #40a070">2</span><span style="color: #666666">;</span> i<span style="color: #666666">++)</span> <span style="color: #666666">{</span> <span style="color: #60a0b0; font-style: italic">// only go through half the length times</span>
+      <span style="color: #007020; font-weight: bold">for</span><span style="color: #666666">(</span><span style="color: #902000">int</span> j <span style="color: #666666">=</span> <span style="color: #40a070">0</span><span style="color: #666666">;</span> j <span style="color: #666666">&lt;</span> arr<span style="color: #666666">.</span><span style="color: #4070a0">length</span> <span style="color: #666666">-</span> i<span style="color: #666666">;</span> j<span style="color: #666666">++)</span> <span style="color: #666666">{</span> <span style="color: #60a0b0; font-style: italic">// end will be sorted so subtract i</span>
+        <span style="color: #902000">int</span> temp<span style="color: #666666">;</span> <span style="color: #60a0b0; font-style: italic">// for when you change arr[j]</span>
+        <span style="color: #007020; font-weight: bold">if</span><span style="color: #666666">(</span>arr<span style="color: #666666">[</span>j<span style="color: #666666">]</span> <span style="color: #666666">&gt;</span> arr<span style="color: #666666">[</span>j<span style="color: #666666">+</span><span style="color: #40a070">1</span><span style="color: #666666">]</span> <span style="color: #666666">{</span>
+          temp <span style="color: #666666">=</span> arr<span style="color: #666666">[</span>j<span style="color: #666666">];</span>
+          arr<span style="color: #666666">[</span>j<span style="color: #666666">]</span> <span style="color: #666666">=</span> arr<span style="color: #666666">[</span>j<span style="color: #666666">+</span><span style="color: #40a070">1</span><span style="color: #666666">];</span>
+          arr<span style="color: #666666">[</span>j<span style="color: #666666">+</span><span style="color: #40a070">1</span><span style="color: #666666">]</span> <span style="color: #666666">=</span> temp<span style="color: #666666">;</span>
+        <span style="color: #666666">}</span>
+      <span style="color: #666666">}</span>
+    <span style="color: #666666">}</span>
+  <span style="color: #666666">}</span>
+
+  <span style="color: #007020; font-weight: bold">public</span> String <span style="color: #06287e">toString</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+    <span style="color: #007020; font-weight: bold">return</span> <span style="color: #4070a0">&quot;\n&quot;</span> <span style="color: #666666">+</span> Arrays<span style="color: #666666">.</span><span style="color: #4070a0">toString</span><span style="color: #666666">(</span>arr<span style="color: #666666">);</span>
+  <span style="color: #666666">}</span>
+
+<span style="color: #666666">}</span>
+</pre></div>
+
+
 				</div>
 			</div>
 		
@@ -79,8 +208,8 @@
 				<span></span>
 			</div>
 			<ul>
-				<li onclick="toUnit(bigO)">Big O Notation</li>
-				<li onclick="toUnit(exceptions)">Exceptions</li>
+				<li onclick="toUnit('bigO')">Big O Notation</li>
+				<li onclick="toUnit('exceptions')">Exceptions</li>
 				<li>Input/Output</li>
 				<li>Sets and Maps</li>
 				<li>Linked Lists</li>
