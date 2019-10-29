@@ -153,40 +153,198 @@
 				<h1 class="title" id="exceptions">Exceptions</h1>
 				<div class="lab">
 					<h3 class="lab-title">Keep Trying</h3> 
-					<div class="code"><pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">import</span> java.io.IOException;
-<span style="color: #000080; font-weight: bold">import</span> java.util.Scanner;
+					<div class="code"><pre style="margin: 0; line-height: 125%"><span style="color: #60a0b0; font-style: italic">/************</span>
 
-<span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">class</span> Tester {
+<span style="color: #60a0b0; font-style: italic">Tester Class</span>
+
+<span style="color: #60a0b0; font-style: italic">************/</span>
+
+<span style="color: #007020; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.io.IOException</span><span style="color: #666666">;</span>
+<span style="color: #007020; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.util.Scanner</span><span style="color: #666666">;</span>
+
+<span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">class</span> <span style="color: #0e84b5; font-weight: bold">Tester</span> <span style="color: #666666">{</span>
   
-  <span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">static</span> <span style="color: #000080; font-weight: bold">void</span> main(String[] args) {
-    <span style="color: #000080; font-weight: bold">boolean</span> shouldLoopAgain = <span style="color: #000080; font-weight: bold">true</span>;
+  <span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">static</span> <span style="color: #902000">void</span> <span style="color: #06287e">main</span><span style="color: #666666">(</span>String<span style="color: #666666">[]</span> args<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+    <span style="color: #902000">boolean</span> shouldLoopAgain <span style="color: #666666">=</span> <span style="color: #007020; font-weight: bold">true</span><span style="color: #666666">;</span>
 
-    <span style="color: #000080; font-weight: bold">while</span>(shouldLoopAgain) {
-      <span style="color: #000080; font-weight: bold">try</span> {
-        Scanner sf = <span style="color: #000080; font-weight: bold">new</span> Scanner(System.<span style="color: #FF0000">in</span>);
-        String str = sf.<span style="color: #FF0000">nextLine</span>();
+    <span style="color: #007020; font-weight: bold">while</span><span style="color: #666666">(</span>shouldLoopAgain<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+      <span style="color: #007020; font-weight: bold">try</span> <span style="color: #666666">{</span>
+        Scanner sf <span style="color: #666666">=</span> <span style="color: #007020; font-weight: bold">new</span> Scanner<span style="color: #666666">(</span>System<span style="color: #666666">.</span><span style="color: #4070a0">in</span><span style="color: #666666">);</span>
+        String str <span style="color: #666666">=</span> sf<span style="color: #666666">.</span><span style="color: #4070a0">nextLine</span><span style="color: #666666">();</span>
 
-        <span style="color: #000080; font-weight: bold">if</span>(str.<span style="color: #FF0000">toLowerCase</span>().<span style="color: #FF0000">equals</span>(<span style="color: #0000FF">&quot;exit&quot;</span>)) {
-          System.<span style="color: #FF0000">out</span>.<span style="color: #FF0000">println</span>(<span style="color: #0000FF">&quot;It did not work&quot;</span>);
-          <span style="color: #000080; font-weight: bold">break</span>;
-        }
+        <span style="color: #007020; font-weight: bold">if</span><span style="color: #666666">(</span>str<span style="color: #666666">.</span><span style="color: #4070a0">toLowerCase</span><span style="color: #666666">().</span><span style="color: #4070a0">equals</span><span style="color: #666666">(</span><span style="color: #4070a0">&quot;exit&quot;</span><span style="color: #666666">))</span> <span style="color: #666666">{</span>
+          System<span style="color: #666666">.</span><span style="color: #4070a0">out</span><span style="color: #666666">.</span><span style="color: #4070a0">println</span><span style="color: #666666">(</span><span style="color: #4070a0">&quot;It did not work&quot;</span><span style="color: #666666">);</span>
+          <span style="color: #007020; font-weight: bold">break</span><span style="color: #666666">;</span>
+        <span style="color: #666666">}</span>
 
-        FileInput test = <span style="color: #000080; font-weight: bold">new</span> FileInput();
-        test.<span style="color: #FF0000">readTheFile</span>(str);
-        shouldLoopAgain = <span style="color: #000080; font-weight: bold">false</span>;
-        System.<span style="color: #FF0000">out</span>.<span style="color: #FF0000">println</span>(<span style="color: #0000FF">&quot;It worked!&quot;</span>);
-      }
-      <span style="color: #000080; font-weight: bold">catch</span> {
-        System.<span style="color: #FF0000">out</span>.<span style="color: #FF0000">println</span>(e.<span style="color: #FF0000">getMessage</span>());
-        System.<span style="color: #FF0000">out</span>.<span style="color: #FF0000">prinln</span>(<span style="color: #0000FF">&quot;Please try again with a valid file name&quot;</span>);
-      }
-    }
-  }
-}
+        FileInput test <span style="color: #666666">=</span> <span style="color: #007020; font-weight: bold">new</span> FileInput<span style="color: #666666">();</span>
+        test<span style="color: #666666">.</span><span style="color: #4070a0">readTheFile</span><span style="color: #666666">(</span>str<span style="color: #666666">);</span>
+        shouldLoopAgain <span style="color: #666666">=</span> <span style="color: #007020; font-weight: bold">false</span><span style="color: #666666">;</span>
+        System<span style="color: #666666">.</span><span style="color: #4070a0">out</span><span style="color: #666666">.</span><span style="color: #4070a0">println</span><span style="color: #666666">(</span><span style="color: #4070a0">&quot;It worked!&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #666666">}</span>
+      <span style="color: #007020; font-weight: bold">catch</span> <span style="color: #666666">{</span>
+        System<span style="color: #666666">.</span><span style="color: #4070a0">out</span><span style="color: #666666">.</span><span style="color: #4070a0">println</span><span style="color: #666666">(</span>e<span style="color: #666666">.</span><span style="color: #4070a0">getMessage</span><span style="color: #666666">());</span>
+        System<span style="color: #666666">.</span><span style="color: #4070a0">out</span><span style="color: #666666">.</span><span style="color: #4070a0">prinln</span><span style="color: #666666">(</span><span style="color: #4070a0">&quot;Please try again with a valid file name&quot;</span><span style="color: #666666">);</span>
+      <span style="color: #666666">}</span>
+    <span style="color: #666666">}</span>
+  <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
 </pre></div>
 
+
 				</div>
+
 			</div>
+
+      <div class="unit">
+        <h3 class="title" id="in/out">Input/Output</h3>
+
+        <div class="lab">
+          <h3 class="lab-title">Reading Files</h3>
+
+          <div class="code"><pre style="margin: 0; line-height: 125%"><span style="color: #60a0b0; font-style: italic">/**************</span>
+
+<span style="color: #60a0b0; font-style: italic">FileNerd Class</span>
+
+<span style="color: #60a0b0; font-style: italic">**************/</span>
+
+<span style="color: #007020; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.io.file</span><span style="color: #666666">;</span>
+<span style="color: #007020; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.io.IOException</span><span style="color: #666666">;</span>
+<span style="color: #007020; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.util.Scanner</span><span style="color: #666666">;</span>
+
+<span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">class</span> <span style="color: #0e84b5; font-weight: bold">FileNerd</span> <span style="color: #666666">{</span>
+  
+  <span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">static</span> <span style="color: #902000">void</span> <span style="color: #06287e">main</span><span style="color: #666666">(</span>String<span style="color: #666666">[]</span> args<span style="color: #666666">)</span> <span style="color: #007020; font-weight: bold">throws</span> IOException <span style="color: #666666">{</span>
+    Scanner sf <span style="color: #666666">=</span> <span style="color: #007020; font-weight: bold">new</span> Scanner<span style="color: #666666">(</span><span style="color: #007020; font-weight: bold">new</span> File<span style="color: #666666">(</span><span style="color: #4070a0">&quot;NerdData.txt&quot;</span><span style="color: #666666">));</span>
+
+    <span style="color: #902000">int</span> maxIndex <span style="color: #666666">=</span> <span style="color: #666666">-</span><span style="color: #40a070">1</span><span style="color: #666666">;</span> <span style="color: #60a0b0; font-style: italic">// Start at -1 so sf.next() will read the text at 0</span>
+
+    String<span style="color: #666666">[]</span> text <span style="color: #666666">=</span> <span style="color: #007020; font-weight: bold">new</span> String<span style="color: #666666">[</span><span style="color: #40a070">1000</span><span style="color: #666666">];</span> <span style="color: #60a0b0; font-style: italic">// declare extra to be safe</span>
+
+    <span style="color: #007020; font-weight: bold">while</span><span style="color: #666666">(</span>sf<span style="color: #666666">.</span><span style="color: #4070a0">hasNext</span><span style="color: #666666">())</span> <span style="color: #666666">{</span>
+      maxIndex<span style="color: #666666">++;</span>
+      text<span style="color: #666666">[</span>maxIndex<span style="color: #666666">]</span> <span style="color: #666666">=</span> sf<span style="color: #666666">.</span><span style="color: #4070a0">nextLine</span><span style="color: #666666">();</span>
+    <span style="color: #666666">}</span>
+    sf<span style="color: #666666">.</span><span style="color: #4070a0">close</span><span style="color: #666666">();</span>
+
+    <span style="color: #007020; font-weight: bold">for</span><span style="color: #666666">(</span><span style="color: #902000">int</span> i <span style="color: #666666">=</span> <span style="color: #40a070">0</span><span style="color: #666666">;</span> i <span style="color: #666666">&lt;=</span> maxIndex<span style="color: #666666">;</span> i<span style="color: #666666">++)</span> <span style="color: #666666">{</span>
+      <span style="color: #007020; font-weight: bold">if</span><span style="color: #666666">(</span>text<span style="color: #666666">[</span>i<span style="color: #666666">].</span><span style="color: #4070a0">indexOf</span><span style="color: #666666">(</span><span style="color: #4070a0">&quot;The&quot;</span><span style="color: #666666">)</span> <span style="color: #666666">==</span> <span style="color: #40a070">0</span><span style="color: #666666">)</span> <span style="color: #666666">{</span> <span style="color: #60a0b0; font-style: italic">// check if &quot;The&quot; is at the beginning</span>
+        System<span style="color: #666666">.</span><span style="color: #4070a0">out</span><span style="color: #666666">.</span><span style="color: #4070a0">println</span><span style="color: #666666">(</span>text<span style="color: #666666">[</span>i<span style="color: #666666">]);</span>
+      <span style="color: #666666">}</span>
+    <span style="color: #666666">}</span>
+  <span style="color: #666666">}</span>
+
+<span style="color: #666666">}</span>
+</pre></div>
+
+        </div>
+
+        <div class="lab">
+          <h3 class="lab-title">Student Averages</h3>
+
+          <div class="code"><pre style="margin: 0; line-height: 125%"><span style="color: #60a0b0; font-style: italic">/********************</span>
+
+<span style="color: #60a0b0; font-style: italic">StudentAverages Class</span>
+
+<span style="color: #60a0b0; font-style: italic">********************/</span>
+
+<span style="color: #007020; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.io.file</span><span style="color: #666666">;</span>
+<span style="color: #007020; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.io.IOException</span><span style="color: #666666">;</span>
+<span style="color: #007020; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.util.Scanner</span><span style="color: #666666">;</span>
+
+<span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">class</span> <span style="color: #0e84b5; font-weight: bold">StudentAverages</span> <span style="color: #666666">{</span>
+  
+  <span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">static</span> <span style="color: #902000">void</span> <span style="color: #06287e">main</span><span style="color: #666666">(</span>String<span style="color: #666666">[]</span> args<span style="color: #666666">)</span> <span style="color: #007020; font-weight: bold">throws</span> IOException <span style="color: #666666">{</span>
+    Scanner sf <span style="color: #666666">=</span> <span style="color: #007020; font-weight: bold">new</span> Scanner<span style="color: #666666">(</span><span style="color: #007020; font-weight: bold">new</span> File<span style="color: #666666">(</span><span style="color: #4070a0">&quot;StudentScores.in&quot;</span><span style="color: #666666">));</span>
+
+    <span style="color: #902000">int</span> maxIndex <span style="color: #666666">=</span> <span style="color: #666666">-</span><span style="color: #40a070">1</span><span style="color: #666666">;</span> <span style="color: #60a0b0; font-style: italic">// Start at -1 so sf.next() will read the text at 0</span>
+
+    String<span style="color: #666666">[]</span> text <span style="color: #666666">=</span> <span style="color: #007020; font-weight: bold">new</span> String<span style="color: #666666">[</span><span style="color: #40a070">1000</span><span style="color: #666666">];</span> <span style="color: #60a0b0; font-style: italic">// declare extra to be safe</span>
+
+    <span style="color: #007020; font-weight: bold">while</span><span style="color: #666666">(</span>sf<span style="color: #666666">.</span><span style="color: #4070a0">hasNext</span><span style="color: #666666">())</span> <span style="color: #666666">{</span>
+      maxIndex<span style="color: #666666">++;</span>
+      text<span style="color: #666666">[</span>maxIndex<span style="color: #666666">]</span> <span style="color: #666666">=</span> sf<span style="color: #666666">.</span><span style="color: #4070a0">nextLine</span><span style="color: #666666">();</span>
+    <span style="color: #666666">}</span>
+    sf<span style="color: #666666">.</span><span style="color: #4070a0">close</span><span style="color: #666666">();</span>
+
+    <span style="color: #007020; font-weight: bold">for</span><span style="color: #666666">(</span><span style="color: #902000">int</span> i <span style="color: #666666">=</span> <span style="color: #40a070">0</span><span style="color: #666666">;</span> i <span style="color: #666666">&lt;=</span> maxIndex<span style="color: #666666">;</span> i<span style="color: #666666">++)</span> <span style="color: #666666">{</span>
+      Scanner s <span style="color: #666666">=</span> <span style="color: #007020; font-weight: bold">new</span> Scanner<span style="color: #666666">(</span>text<span style="color: #666666">[</span>i<span style="color: #666666">]);</span>
+
+      String name <span style="color: #666666">=</span> s<span style="color: #666666">.</span><span style="color: #4070a0">next</span><span style="color: #666666">();</span>
+      <span style="color: #902000">int</span> avg <span style="color: #666666">=</span> <span style="color: #40a070">0</span><span style="color: #666666">;</span>
+      <span style="color: #902000">int</span> nums <span style="color: #666666">=</span> <span style="color: #40a070">0</span><span style="color: #666666">;</span>
+
+      <span style="color: #007020; font-weight: bold">while</span><span style="color: #666666">(</span>s<span style="color: #666666">.</span><span style="color: #4070a0">hasNext</span><span style="color: #666666">())</span> <span style="color: #666666">{</span>
+        avg <span style="color: #666666">+=</span> s<span style="color: #666666">.</span><span style="color: #4070a0">nextInt</span><span style="color: #666666">();</span>
+        nums<span style="color: #666666">++;</span>
+      <span style="color: #666666">}</span>
+
+      avg <span style="color: #666666">=</span> <span style="color: #666666">(</span><span style="color: #902000">int</span><span style="color: #666666">)</span>Math<span style="color: #666666">.</span><span style="color: #4070a0">round</span><span style="color: #666666">((</span><span style="color: #902000">double</span><span style="color: #666666">)</span>avg<span style="color: #666666">/</span>nums<span style="color: #666666">);</span>
+
+      System<span style="color: #666666">.</span><span style="color: #4070a0">out</span><span style="color: #666666">.</span><span style="color: #4070a0">println</span><span style="color: #666666">(</span>name <span style="color: #666666">+</span> <span style="color: #4070a0">&quot;, average = &quot;</span> <span style="color: #666666">+</span> avg<span style="color: #666666">);</span>
+    <span style="color: #666666">}</span>
+  <span style="color: #666666">}</span>
+
+<span style="color: #666666">}</span>
+</pre></div>
+
+        </div>
+
+        <div class="lab">
+          <h3 class="lab-title">Write Student Averages</h3>
+
+          <div class="code"><pre style="margin: 0; line-height: 125%"><span style="color: #60a0b0; font-style: italic">/************************</span>
+
+<span style="color: #60a0b0; font-style: italic">StudentAverages_Out Class</span>
+
+<span style="color: #60a0b0; font-style: italic">************************/</span>
+
+<span style="color: #007020; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.io.file</span><span style="color: #666666">;</span>
+<span style="color: #007020; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.io.IOException</span><span style="color: #666666">;</span>
+<span style="color: #007020; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.util.Scanner</span><span style="color: #666666">;</span>
+
+<span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">class</span> <span style="color: #0e84b5; font-weight: bold">StudentAverages_Out</span> <span style="color: #666666">{</span>
+  
+  <span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">static</span> <span style="color: #902000">void</span> <span style="color: #06287e">main</span><span style="color: #666666">(</span>String<span style="color: #666666">[]</span> args<span style="color: #666666">)</span> <span style="color: #007020; font-weight: bold">throws</span> IOException <span style="color: #666666">{</span>
+    Scanner sf <span style="color: #666666">=</span> <span style="color: #007020; font-weight: bold">new</span> Scanner<span style="color: #666666">(</span><span style="color: #007020; font-weight: bold">new</span> File<span style="color: #666666">(</span><span style="color: #4070a0">&quot;StudentScores.in&quot;</span><span style="color: #666666">));</span>
+
+    <span style="color: #902000">int</span> maxIndex <span style="color: #666666">=</span> <span style="color: #666666">-</span><span style="color: #40a070">1</span><span style="color: #666666">;</span> <span style="color: #60a0b0; font-style: italic">// Start at -1 so sf.next() will read the text at 0</span>
+
+    String<span style="color: #666666">[]</span> text <span style="color: #666666">=</span> <span style="color: #007020; font-weight: bold">new</span> String<span style="color: #666666">[</span><span style="color: #40a070">1000</span><span style="color: #666666">];</span> <span style="color: #60a0b0; font-style: italic">// declare extra to be safe</span>
+
+    <span style="color: #007020; font-weight: bold">while</span><span style="color: #666666">(</span>sf<span style="color: #666666">.</span><span style="color: #4070a0">hasNext</span><span style="color: #666666">())</span> <span style="color: #666666">{</span>
+      maxIndex<span style="color: #666666">++;</span>
+      text<span style="color: #666666">[</span>maxIndex<span style="color: #666666">]</span> <span style="color: #666666">=</span> sf<span style="color: #666666">.</span><span style="color: #4070a0">nextLine</span><span style="color: #666666">();</span>
+    <span style="color: #666666">}</span>
+    sf<span style="color: #666666">.</span><span style="color: #4070a0">close</span><span style="color: #666666">();</span>
+
+    <span style="color: #007020; font-weight: bold">for</span><span style="color: #666666">(</span><span style="color: #902000">int</span> i <span style="color: #666666">=</span> <span style="color: #40a070">0</span><span style="color: #666666">;</span> i <span style="color: #666666">&lt;=</span> maxIndex<span style="color: #666666">;</span> i<span style="color: #666666">++)</span> <span style="color: #666666">{</span>
+      Scanner s <span style="color: #666666">=</span> <span style="color: #007020; font-weight: bold">new</span> Scanner<span style="color: #666666">(</span>text<span style="color: #666666">[</span>i<span style="color: #666666">]);</span>
+
+      String name <span style="color: #666666">=</span> s<span style="color: #666666">.</span><span style="color: #4070a0">next</span><span style="color: #666666">();</span>
+      <span style="color: #902000">int</span> avg <span style="color: #666666">=</span> <span style="color: #40a070">0</span><span style="color: #666666">;</span>
+      <span style="color: #902000">int</span> nums <span style="color: #666666">=</span> <span style="color: #40a070">0</span><span style="color: #666666">;</span>
+
+      <span style="color: #007020; font-weight: bold">while</span><span style="color: #666666">(</span>s<span style="color: #666666">.</span><span style="color: #4070a0">hasNext</span><span style="color: #666666">())</span> <span style="color: #666666">{</span>
+        avg <span style="color: #666666">+=</span> s<span style="color: #666666">.</span><span style="color: #4070a0">nextInt</span><span style="color: #666666">();</span>
+        nums<span style="color: #666666">++;</span>
+      <span style="color: #666666">}</span>
+
+      avg <span style="color: #666666">=</span> <span style="color: #666666">(</span><span style="color: #902000">int</span><span style="color: #666666">)</span>Math<span style="color: #666666">.</span><span style="color: #4070a0">round</span><span style="color: #666666">((</span><span style="color: #902000">double</span><span style="color: #666666">)</span>avg<span style="color: #666666">/</span>nums<span style="color: #666666">);</span>
+
+      FileWriter fw <span style="color: #666666">=</span> <span style="color: #007020; font-weight: bold">new</span> FileWriter<span style="color: #666666">(</span><span style="color: #4070a0">&quot;StudentScores.out&quot;</span><span style="color: #666666">,</span> <span style="color: #007020; font-weight: bold">true</span><span style="color: #666666">);</span>
+      PrintWriter output <span style="color: #666666">=</span> <span style="color: #007020; font-weight: bold">new</span> PrintWriter<span style="color: #666666">(</span>fw<span style="color: #666666">,</span> <span style="color: #007020; font-weight: bold">true</span><span style="color: #666666">);</span>
+
+      output<span style="color: #666666">.</span><span style="color: #4070a0">println</span><span style="color: #666666">(</span>name <span style="color: #666666">+</span> <span style="color: #4070a0">&quot;, average = &quot;</span> <span style="color: #666666">+</span> avg<span style="color: #666666">);</span>
+    <span style="color: #666666">}</span>
+  <span style="color: #666666">}</span>
+
+<span style="color: #666666">}</span>
+</pre></div>
+
+        </div>
+
+      </div>
 		</div>
 
 		<div id="header">
@@ -210,7 +368,7 @@
 			<ul>
 				<li onclick="toUnit('bigO')">Big O Notation</li>
 				<li onclick="toUnit('exceptions')">Exceptions</li>
-				<li>Input/Output</li>
+				<li onclick="toUnit('in/out')">Input/Output</li>
 				<li>Sets and Maps</li>
 				<li>Linked Lists</li>
 				<li>Stacks and Queues</li>
